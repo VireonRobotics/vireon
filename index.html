@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vireon Technologies - Engineering a Safer, Smarter Africa</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+      body {
+        font-family: "Poppins", sans-serif;
+        background-color: #0a0a0a;
+        color: #e5e7eb;
+      }
+      .bg-custom-dark {
+        background-color: #111827;
+      }
+      .bg-custom-darker {
+        background-color: #0a0a0a;
+      }
+      .text-accent {
+        background: -webkit-linear-gradient(45deg, #38bdf8, #67e8f9);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+      .bg-accent {
+        background-color: #0ea5e9;
+      }
+      .border-accent {
+        border-color: #0ea5e9;
+      }
+      .scroll-target {
+        opacity: 0;
+        transform: translateY(30px);
+        transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+      }
+      .scroll-target.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+      .product-card {
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+      .product-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(0, 165, 233, 0.1);
+      }
+    </style>
+  </head>
+  <body class="bg-custom-darker">
+    <!-- Header -->
+    <header
+      class="bg-black/60 backdrop-blur-md fixed top-0 left-0 right-0 z-50"
+    >
+      <nav
+        class="container mx-auto px-6 py-4 flex justify-between items-center"
+      >
+        <a href="#" class="flex items-center space-x-2">
+          <img
+            src="VIREON_LOGO-removebg-preview.png"
+            alt="Vireon Logo"
+            class="h-8 w-auto"
+            style="width: fit-content"
+          />
+        </a>
+        <div class="hidden md:flex space-x-8 items-center">
+          <a
+            href="#about"
+            class="text-gray-300 hover:text-sky-400 transition duration-300"
+            >About</a
+          >
+          <a
+            href="#products"
+            class="text-gray-300 hover:text-sky-400 transition duration-300"
+            >Products</a
+          >
+          <a
+            href="#mission"
+            class="text-gray-300 hover:text-sky-400 transition duration-300"
+            >Mission</a
+          >
+          <a
+            href="#contact"
+            class="bg-accent text-white px-5 py-2.5 rounded-md hover:bg-sky-500 transition duration-300 font-semibold"
+            >Contact Us</a
+          >
+        </div>
+        <div class="md:hidden">
+          <button id="menu-btn" class="text-white focus:outline-none">
+            <svg
+              class="w-6 h-6"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w.org/2000/svg"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M4 6h16M4 12h16m-7 6h7"
+              ></path>
+            </svg>
+          </button>
+        </div>
+      </nav>
+      <!-- Mobile Menu -->
+      <div id="mobile-menu" class="hidden md:hidden">
+        <a
+          href="#about"
+          class="block py-2 px-6 text-sm text-gray-300 hover:bg-gray-800"
+          >About</a
+        >
+        <a
+          href="#products"
+          class="block py-2 px-6 text-sm text-gray-300 hover:bg-gray-800"
+          >Products</a
+        >
+        <a
+          href="#mission"
+          class="block py-2 px-6 text-sm text-gray-300 hover:bg-gray-800"
+          >Mission</a
+        >
+        <a
+          href="#contact"
+          class="block py-2 px-6 text-sm text-gray-300 hover:bg-gray-800"
+          >Contact Us</a
+        >
+      </div>
+    </header>
+
+    <main>
+      <!-- Hero Section -->
+      <section
+        class="min-h-screen flex flex-col justify-center items-center text-center px-4 pt-20"
+        style="
+          background-image: url('Drone.png');
+          background-repeat: no-repeat;
+          background-position: right;
+          background-color: #212632;
+        "
+      >
+        <h1
+          class="text-4xl md:text-6xl font-black text-white uppercase tracking-wider scroll-target"
+        >
+          Vireon Technologies
+        </h1>
+        <p
+          class="text-2xl md:text-3xl mt-4 text-accent font-semibold scroll-target"
+        >
+          Engineering a Safer, Smarter Africa.
+        </p>
+      </section>
+
+      <!-- About Section -->
+      <section id="about" class="py-20 md:py-32">
+        <div class="container mx-auto px-6">
+          <div
+            class="grid grid-cols-1 md:grid-cols-3 gap-8 items-center scroll-target"
+          >
+            <div class="md:col-span-1">
+              <h2
+                class="text-3xl md:text-4xl font-bold text-white flex items-center"
+              >
+                <i data-lucide="info" class="w-10 h-10 text-sky-400 mr-4"></i
+                >Who We Are
+              </h2>
+            </div>
+            <div class="md:col-span-2">
+              <p class="text-lg text-gray-300 leading-relaxed">
+                Vireon Technologies is at the forefront of innovation,
+                engineering next-generation solutions at the intersection of
+                robotics, IoT, and AI. Our mission is to tackle Africa's unique
+                challenges by enhancing security, protecting vital
+                infrastructure, optimizing mobility, and ultimately improving
+                the quality of life across the continent.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Products Section -->
+      <section id="products" class="py-20 md:py-32 bg-custom-dark">
+        <div class="container mx-auto px-6">
+          <div class="text-center mb-16 scroll-target">
+            <h2 class="text-3xl md:text-4xl font-bold text-white">
+              What we are building
+            </h2>
+            <p class="text-gray-400 mt-2">
+              We are pioneering robotics and IoT for a new era of security and
+              emergency response.
+            </p>
+          </div>
+
+          <!-- Product 1: RoadSure -->
+          <div
+            class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center mb-24 scroll-target product-card p-8 rounded-xl bg-black/20"
+          >
+            <div class="rounded-lg overflow-hidden shadow-2xl">
+              <img
+                src="Roadsure.png"
+                alt="RoadSure Device"
+                class="w-full h-full object-cover"
+              />
+            </div>
+            <div>
+              <h3 class="text-3xl font-bold text-sky-400 mb-4">RoadSure</h3>
+              <p class="text-gray-300 mb-6">
+                A dashboard-mounted IoT safety device that uses AI and advanced
+                sensors to detect attacks, accidents, and other road
+                emergencies, then instantly triggers a distress alarm.
+              </p>
+              <ul class="space-y-4 text-gray-300">
+                <li class="flex items-start">
+                  <i
+                    data-lucide="shield-alert"
+                    class="w-6 h-6 text-sky-400 mr-3 mt-1 flex-shrink-0"
+                  ></i>
+                  <div>
+                    <strong>Automatic Emergency Detection:</strong>
+                    Automatically identifies critical events on the road.
+                  </div>
+                </li>
+                <li class="flex items-start">
+                  <i
+                    data-lucide="siren"
+                    class="w-6 h-6 text-sky-400 mr-3 mt-1 flex-shrink-0"
+                  ></i>
+                  <div>
+                    <strong>Instant Distress Signal:</strong> Transmits a live
+                    GPS tracking link to emergency response agencies.
+                  </div>
+                </li>
+                <li class="flex items-start">
+                  <i
+                    data-lucide="map-pin"
+                    class="w-6 h-6 text-sky-400 mr-3 mt-1 flex-shrink-0"
+                  ></i>
+                  <div>
+                    <strong>Live Vehicle Tracking:</strong> Monitor vehicles and
+                    high-value cargo in real-time.
+                  </div>
+                </li>
+                <li class="flex items-start">
+                  <i
+                    data-lucide="lock"
+                    class="w-6 h-6 text-sky-400 mr-3 mt-1 flex-shrink-0"
+                  ></i>
+                  <div>
+                    <strong>Anti-Theft & Recovery:</strong> Ensures vehicles can
+                    be swiftly located and recovered if stolen.
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Product 2: Udide-6 -->
+          <div
+            class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center mb-24 scroll-target product-card p-8 rounded-xl bg-black/20"
+          >
+            <div class="md:order-2 rounded-lg overflow-hidden shadow-2xl">
+              <img
+                src="Udide-6.png"
+                alt="Udide-6 CAD Model"
+                class="w-full h-full object-cover"
+              />
+            </div>
+            <div class="md:order-1">
+              <h3 class="text-3xl font-bold text-sky-400 mb-4">Udide-6</h3>
+              <p class="text-gray-300 mb-6">
+                An autonomous patrol robot. Its hexapod design provides
+                stability and terrain adaptaility, It is equipped with lidar and
+                dual spectrum cameras making it ideal for surveillance in
+                hazardous or high-risk environments.
+              </p>
+              <ul class="space-y-4 text-gray-300">
+                <li class="flex items-start">
+                  <i
+                    data-lucide="move-3d"
+                    class="w-6 h-6 text-sky-400 mr-3 mt-1 flex-shrink-0"
+                  ></i>
+                  <div>
+                    <strong>Multi-Terrain Hexapod Design:</strong> Navigates
+                    complex terrain with 6 agile, 3-DOF legs.
+                  </div>
+                </li>
+                <li class="flex items-start">
+                  <i
+                    data-lucide="scan"
+                    class="w-6 h-6 text-sky-400 mr-3 mt-1 flex-shrink-0"
+                  ></i>
+                  <div>
+                    <strong>Advanced Sensor Fusion:</strong> Equipped with 3D
+                    LiDAR, proximity sensors, and dual-spectrum cameras.
+                  </div>
+                </li>
+                <li class="flex items-start">
+                  <i
+                    data-lucide="search"
+                    class="w-6 h-6 text-sky-400 mr-3 mt-1 flex-shrink-0"
+                  ></i>
+                  <div>
+                    <strong>Versatile Applications:</strong> Suited for patrol
+                    in mines, construction sites, and search-and-rescue.
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Product 3: Kiara -->
+          <div
+            class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center scroll-target product-card p-8 rounded-xl bg-black/20"
+          >
+            <div class="rounded-lg overflow-hidden shadow-2xl">
+              <img
+                src="Kiara.png"
+                alt="Kiara Prototype"
+                class="w-full h-full object-cover"
+              />
+            </div>
+            <div>
+              <h3 class="text-3xl font-bold text-sky-400 mb-4">Kiara</h3>
+              <p class="text-gray-300 mb-6">
+                Our first prototype of a general-purpose companionship robot.
+                Built on a bi-wheeled, self-balancing platform, Kiara is
+                designed to interact intelligently and intuitively with users.
+              </p>
+              <ul class="space-y-4 text-gray-300">
+                <li class="flex items-start">
+                  <i
+                    data-lucide="rotate-cw"
+                    class="w-6 h-6 text-sky-400 mr-3 mt-1 flex-shrink-0"
+                  ></i>
+                  <div>
+                    <strong>Dynamic Self-Balancing:</strong> Navigates smoothly
+                    with advanced obstacle avoidance.
+                  </div>
+                </li>
+                <li class="flex items-start">
+                  <i
+                    data-lucide="message-circle"
+                    class="w-6 h-6 text-sky-400 mr-3 mt-1 flex-shrink-0"
+                  ></i>
+                  <div>
+                    <strong>Intelligent Communication:</strong> Integrated with
+                    an LLM and text-to-speech for natural user interaction.
+                  </div>
+                </li>
+                <li class="flex items-start">
+                  <i
+                    data-lucide="bot"
+                    class="w-6 h-6 text-sky-400 mr-3 mt-1 flex-shrink-0"
+                  ></i>
+                  <div>
+                    <strong>General Purpose Platform:</strong> A foundation for
+                    future robots in assistance, education, and companionship.
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Mission Section -->
+      <section
+        id="mission"
+        class="py-24 bg-cover bg-center bg-fixed"
+        style="
+          background-image: linear-gradient(
+              rgba(17, 24, 39, 0.85),
+              rgba(17, 24, 39, 0.85)
+            ),
+            url(https://placehold.co/1920x1080/0a0a0a/333333?text=Vireon);
+        "
+      >
+        <div class="container mx-auto px-6 text-center scroll-target">
+          <i
+            data-lucide="rocket"
+            class="w-16 h-16 text-sky-400 mx-auto mb-6"
+          ></i>
+          <h3
+            class="text-3xl md:text-4xl font-bold text-white leading-tight max-w-4xl mx-auto"
+          >
+            "Securing people, infrastructure, and transport across Africa
+            through robotics and intelligent systems."
+          </h3>
+        </div>
+      </section>
+
+      <!-- Road Ahead Section -->
+      <section id="road-ahead" class="py-20 md:py-32">
+        <div class="container mx-auto px-6 text-center scroll-target">
+          <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">
+            Join Our Journey
+          </h2>
+          <p class="text-lg text-gray-300 max-w-3xl mx-auto mb-8">
+            We are seeking strategic partnerships and funding to establish our
+            production facility, expand our team, and roll out our first
+            products by mid-2026. If you share our vision for a technologically
+            advanced Africa, we want to hear from you.
+          </p>
+          <a
+            href="#contact"
+            class="bg-accent inline-block text-white font-bold py-3 px-8 rounded-lg hover:bg-sky-500 hover:scale-105 transition-all duration-300 text-lg shadow-lg shadow-sky-500/20"
+          >
+            Partner With Us
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer / Contact Section -->
+    <footer id="contact" class="bg-custom-dark py-16">
+      <div class="container mx-auto px-6 text-center">
+        <h2 class="text-3xl font-bold text-white mb-8 scroll-target">
+          Get in Touch
+        </h2>
+        <div
+          class="flex flex-col md:flex-row justify-center items-center space-y-6 md:space-y-0 md:space-x-8 mb-10 scroll-target"
+        >
+          <a
+            href="mailto:technovireon@gmail.com"
+            class="text-gray-300 hover:text-sky-400 transition flex items-center"
+            ><i data-lucide="mail" class="w-5 h-5 mr-2"></i
+            >technovireon@gmail.com</a
+          >
+          <a
+            href="tel:+2347054598108"
+            class="text-gray-300 hover:text-sky-400 transition flex items-center"
+            ><i data-lucide="phone" class="w-5 h-5 mr-2"></i>+234 705 459
+            8108</a
+          >
+          <a
+            href="https://wa.me/2347037170954"
+            class="text-gray-300 hover:text-sky-400 transition flex items-center"
+            ><i data-lucide="message-circle" class="w-5 h-5 mr-2"></i
+            >WhatsApp</a
+          >
+        </div>
+        <div class="flex justify-center space-x-6 mb-8 scroll-target">
+          <a
+            href="https://x.com/Vireontech?t=vuogX1Gn3Yv4Jx2jxFgRew&s=09"
+            target="_blank"
+            class="text-gray-400 hover:text-sky-400 transition"
+          >
+            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+              <path
+                d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"
+              ></path>
+            </svg>
+          </a>
+          <a
+            href="https://www.instagram.com/vireon_tech?igsh=MWdhdm5wNW1uaHNvNQ=="
+            target="_blank"
+            class="text-gray-400 hover:text-sky-400 transition"
+          >
+            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+              <path
+                d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.85s-.011 3.584-.069 4.85c-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07s-3.584-.012-4.85-.07c-3.252-.148-4.771-1.691-4.919-4.919-.058-1.265-.069-1.645-.069-4.85s.011-3.584.069-4.85c.149-3.225 1.664-4.771 4.919-4.919 1.266-.057 1.644-.069 4.85-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948s.014 3.667.072 4.947c.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072s3.667-.014 4.947-.072c4.358-.2 6.78-2.618 6.98-6.98.059-1.281.073-1.689.073-4.948s-.014-3.667-.072-4.947c-.2-4.358-2.618-6.78-6.98-6.98C15.667.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.88 1.44 1.44 0 000-2.88z"
+              ></path>
+            </svg>
+          </a>
+          <a
+            href="https://www.linkedin.com/company/unikrib/"
+            target="_blank"
+            class="text-gray-400 hover:text-sky-400 transition"
+          >
+            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+              <path
+                d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"
+              ></path>
+            </svg>
+          </a>
+        </div>
+        <p class="text-gray-500 text-sm">
+          &copy; 2025 Vireon Technologies. All Rights Reserved.
+        </p>
+      </div>
+    </footer>
+
+    <script>
+      // Mobile menu toggle
+      const menuBtn = document.getElementById("menu-btn");
+      const mobileMenu = document.getElementById("mobile-menu");
+      menuBtn.addEventListener("click", () => {
+        mobileMenu.classList.toggle("hidden");
+      });
+
+      // Close mobile menu when a link is clicked
+      const mobileLinks = document.querySelectorAll("#mobile-menu a");
+      mobileLinks.forEach((link) => {
+        link.addEventListener("click", () => {
+          mobileMenu.classList.add("hidden");
+        });
+      });
+
+      // Scroll animations
+      const targets = document.querySelectorAll(".scroll-target");
+      const observer = new IntersectionObserver(
+        (entries, observer) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("visible");
+              observer.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.1 }
+      );
+
+      targets.forEach((target) => {
+        observer.observe(target);
+      });
+
+      // Initialize Lucide icons
+      lucide.createIcons();
+    </script>
+  </body>
+</html>
+
