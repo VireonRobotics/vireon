@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Flask-SocketIO chat</title>
+        <style>
+            body { font-family: Arial; margin: 20px; }
+            #messages { list-style: none; padding: 0; }
+            #messages li { padding: 8px; margin: 4px; background: #f0f0f0; border-radius: 8px; }
+            .status { color: gray; font-style: italic; }
+            .private { background: #e3f2fd; }
+        </style>
+    </head>
+    <body>
+        <h1>Flask-SocketIO Real-time Chat</h1>
+        <ul id="messages"></ul>
+
+        <input type="text" id="messageInput" placeholder="Type a message..." autocomplete="off" />
+        <button onclick="sendMessage()">Send</button>
+
+        <!-- <script src="https://cdn.socket.io/4.7.5/socket.io.min.js"></script> -->
+        <script src="/socket.io/socket.io.js"></script>
+        <script>
+            const socket = io();
+
+            const messages = document.getElementById('messages');
+            const input = document.getElementById('messageInput');
+
+            function addMessage(html, className=''){
+                const li = document.createElement('li')
+                li.innerHTML = html;
+                if (className) li.className = className;
+                messages.appendChild(li);
+                messages.scrollTop = messages.scrollHeight;
+            }
+
+            socket.on('connect', () => {
+                addMessage('You are connected!', 'status');
+            });
+
+            socket.on('status', (data) => {
+                addMessage(data.msg, 'status');
+            });
+
+            socket.on('message', (data) => {
+                addMessage(`<strong>${data.username}:</strong> ${data.msg} <small>(${data.timestamp})</small>`);
+            });
+
+            function sendMessage() {
+                const msg = input.value.trim();
+                if (msg) {
+                    socket.emit('message',  { msg: msg });
+                    input.value = '';
+                }
+            }
+
+            input.addEventListener('keypress', (e) => {
+                if (e.key === 'Enter') sendMessage();
+            });
+        </script>
+    </body>
+</html>
